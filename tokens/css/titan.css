@@ -745,13 +745,18 @@
 
   /* ---------------------------- */
   /* Table (borderless + bottoms) */
+  /* Borderless: no box borders; only horizontal separators. Header darker, rows lighter. */
   /* ---------------------------- */
   --table-background: var(--surface-0);
   --table-radius: var(--radius-none);
+  --table-cell-background: transparent;
+  --table-header-separator: var(--color-steel-500);
+  --table-row-separator: var(--color-steel-100);
+  --table-header-border-bottom: var(--color-steel-300);
+  --table-cell-border-bottom: var(--color-steel-200);
   --table-row-hover: var(--surface-hover);
   --table-row-selected: var(--surface-selected);
   --table-border-bottom: var(--color-steel-200);
-  --table-header-border-bottom: var(--color-steel-300);
 
   /* ---------------------------- */
   /* Pill / Chip / Badge          */

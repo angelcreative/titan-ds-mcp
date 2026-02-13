@@ -1,0 +1,47 @@
+{
+  "table": {
+    "variant": "borderless",
+    "description": "Tabla sin bordes de contenedor ni celdas; solo separadores horizontales. Header más oscuro que filas. Hover solo en fila.",
+    "tokens": {
+      "container": {
+        "background": "var(--table-background, transparent)",
+        "radius": "var(--table-radius)",
+        "overflow": "visible"
+      },
+      "cell": {
+        "background": "var(--table-cell-background, transparent)",
+        "padding": "var(--pad-s) var(--pad-m)"
+      },
+      "headerBorder": "var(--table-header-separator, var(--table-header-border-bottom, var(--color-steel-500)))",
+      "rowBorder": "var(--table-row-separator, var(--table-cell-border-bottom, var(--color-steel-100)))",
+      "rowHover": "var(--table-row-hover)"
+    },
+    "sortIcons": {
+      "library": "lucide-react",
+      "inactive": "ArrowUpDown",
+      "asc": "MoveUp",
+      "desc": "MoveDown",
+      "size": 16,
+      "strokeWidth": 2
+    },
+    "actionsMenu": {
+      "tokens": {
+        "background": "var(--popover-background)",
+        "radius": "var(--popover-radius)",
+        "shadow": "var(--popover-shadow)",
+        "border": "var(--card-border)",
+        "itemHover": "var(--surface-hover)",
+        "itemDangerHoverText": "var(--text-error-primary)",
+        "itemDangerHoverBackground": "var(--background-error)"
+      },
+      "itemIcons": {
+        "library": "lucide-react",
+        "edit": "Pencil",
+        "clone": "Copy",
+        "delete": "Trash2",
+        "size": 16,
+        "strokeWidth": 2
+      }
+    }
+  }
+}

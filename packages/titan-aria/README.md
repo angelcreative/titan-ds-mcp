@@ -7,10 +7,10 @@ The package does **not** bundle Titan. Your app must load Titan (base CSS + one 
 ## Installation
 
 ```bash
-npm install titan-aria react react-dom react-aria-components
+npm install titan-aria react react-dom react-aria-components lucide-react
 ```
 
-**Peer dependencies:** `react`, `react-dom`, `react-aria-components`.
+**Peer dependencies:** `react`, `react-dom`, `react-aria-components`, **`lucide-react`** (required for the `Icon` component and icon buttons; always install it when using titan-aria).
 
 ## Load order (important)
 
@@ -77,6 +77,33 @@ import { TextField, Label, Input, FieldError } from 'titan-aria';
 ```
 
 Helper/description text can be rendered inside `TextField` (e.g. a `<span>` with `slot="description"`) or as custom content; React Aria Components does not export a standalone `Description` component.
+
+### Icon (Lucide)
+
+Icons use **Lucide React**. You must install `lucide-react` in the app that uses titan-aria.
+
+```tsx
+import { Icon } from 'titan-aria';
+import { Plus, ChevronDown } from 'lucide-react';
+
+<Icon icon={Plus} size="m" />
+<Icon icon={ChevronDown} size="s" />
+```
+
+`size`: `'s'` (12px), `'m'` (16px), `'l'` (24px).
+
+### Button (icon-only)
+
+Use `slot="icon"` with an `Icon` as the only child. Variants: `primary`, `secondary`, `tertiary` (default for icon-only). Always full rounded.
+
+```tsx
+import { Button, Icon } from 'titan-aria';
+import { Plus } from 'lucide-react';
+
+<Button slot="icon" variant="primary" aria-label="Add">
+  <Icon icon={Plus} size="m" />
+</Button>
+```
 
 ### Other components
 
