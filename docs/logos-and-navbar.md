@@ -1,6 +1,12 @@
 # Logos y navbar por tema
 
-Los logos de producto viven en **`assets/logos/`**. Cada archivo es un SVG con nombre `logo-{tema}.svg`. En la **navbar**, el logo va **siempre a la izquierda** y se elige según el tema activo.
+Los logos de producto viven en **`assets/logos/`**. Cada archivo es un SVG con nombre `logo-{tema}.svg`. No se usa texto junto al logo; solo la imagen según el tema activo.
+
+## Izquierda de la navbar: icono 9 puntos + logo
+
+- **Orden fijo:** primero el **icono de 9 puntos** (app launcher / waffle), luego el **logo**.
+- El icono de 9 puntos va **siempre a la izquierda del logo**. Lucide: **`LayoutGrid`** (rejilla 3×3).
+- El logo se elige según el tema (`data-theme`); sin texto adicional.
 
 ## Mapeo tema → logo
 
@@ -14,18 +20,20 @@ Los logos de producto viven en **`assets/logos/`**. Cada archivo es un SVG con n
 | `tweetbinder` | `logo-tweetbinder.svg` |
 | `connect` | `logo-connect.svg` |
 
+## Avatar (derecha de la navbar)
+
+Reutilizar los **tokens de avatar** de Titan (`--avatar-bg`, `--avatar-size`, `--avatar-radius`, `--avatar-color`, etc.) para el avatar de usuario en la navbar. No definir tokens específicos de navbar para el avatar.
+
 ## Convención navbar
 
-- **Posición del logo:** izquierda.
-- El logo suele ser enlace al inicio (home).
-- El tema lo define la app (p. ej. `html[data-theme="demand"]`); según ese valor se usa el archivo correspondiente.
+- **Izquierda:** [Icono LayoutGrid (9 puntos)] [Logo según tema]. Logo suele ser enlace al inicio (home).
+- **Derecha:** Ítems de utilidad (iconos) + avatar (tokens de avatar).
+- El tema lo define la app (p. ej. `html[data-theme="demand"]`).
 
 ## Uso en la app
 
-Al implementar una navbar (p. ej. “navbar demand”):
+1. Leer el tema activo (`data-theme` o contexto de app).
+2. Resolver el archivo de logo con la tabla anterior.
+3. En la zona izquierda: renderizar primero el botón/icono **LayoutGrid** (9 puntos), luego el logo `<img src="…/assets/logos/logo-{tema}.svg" alt="…" />`.
 
-1. Leer el tema activo (p. ej. `document.documentElement.getAttribute('data-theme')` o contexto de app).
-2. Resolver el nombre del archivo con la tabla anterior (neutral y audiense → `logo-audiense.svg`).
-3. Colocar el logo a la izquierda: `<img src="/assets/logos/logo-demand.svg" alt="Demand" />` o import/require según el bundler.
-
-Spec en JSON para Cursor/MCP: **`foundations/navbar.json`**.
+Spec en JSON: **`foundations/navbar.json`**.

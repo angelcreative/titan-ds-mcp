@@ -6,7 +6,7 @@ Specs en JSON y convenciones para que implementaciones (o Cursor/MCP) puedan rep
 
 - **`table-borderless.json`** — Especificación de la tabla borderless: tokens de contenedor, celdas, separadores, hover, iconos de ordenación (Lucide) y menú de acciones (Editar / Clonar / Borrar). Ver [docs/table-borderless.md](../docs/table-borderless.md) para la documentación completa (tokens + reglas CSS + convención de iconos).
 
-- **`navbar.json`** — Navbar con logo a la izquierda; mapeo tema → archivo de logo (`assets/logos/logo-{tema}.svg`). Audiense y neutral usan `logo-audiense.svg`. Ver [docs/logos-and-navbar.md](../docs/logos-and-navbar.md).
+- **`navbar.json`** — Navbar: a la izquierda icono 9 puntos (LayoutGrid) + logo según tema; a la derecha ítems + avatar (reutilizar tokens de avatar). Sin texto junto al logo. Ver [docs/logos-and-navbar.md](../docs/logos-and-navbar.md).
 
 - **`copy-and-links.json`** — Convención copy: títulos/cabeceros/cuerpo siempre steel; color de tema solo para enlaces. Ver [docs/copy-and-links.md](../docs/copy-and-links.md).
 

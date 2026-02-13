@@ -1,8 +1,14 @@
 {
   "navbar": {
-    "description": "Navbar con logo a la izquierda; logo según tema activo (data-theme).",
+    "description": "Navbar: a la izquierda icono 9 puntos (LayoutGrid) + logo según tema; a la derecha ítems de utilidad + avatar. Sin texto junto al logo.",
     "logoPosition": "left",
     "logosPath": "assets/logos",
+    "leftOrder": ["appLauncher", "logo"],
+    "appLauncherIcon": {
+      "library": "lucide-react",
+      "name": "LayoutGrid",
+      "description": "Icono de 9 puntos (waffle / app launcher); siempre a la izquierda del logo"
+    },
     "themeToLogo": {
       "demand": "logo-demand.svg",
       "audiense": "logo-audiense.svg",
@@ -11,6 +17,7 @@
       "linkedin": "logo-inkedin.svg",
       "tweetbinder": "logo-tweetbinder.svg",
       "connect": "logo-connect.svg"
-    }
+    },
+    "avatar": "Reuse Titan avatar tokens (--avatar-bg, --avatar-size, --avatar-radius, --avatar-color, etc.)"
   }
 }
