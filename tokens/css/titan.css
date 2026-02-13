@@ -721,9 +721,26 @@
   --dialog-radius: var(--radius-dialog);
   --dialog-shadow: var(--elevation-3);
 
+  /* Drawer: panel sliding from side; always has overlay underneath, header (title + close ghost icon), body */
   --drawer-background: var(--surface-1);
   --drawer-radius: var(--radius-drawer);
   --drawer-shadow: var(--elevation-3);
+  /* --drawer-width defined in Layout section above (420px) */
+  --drawer-overlay-backdrop: var(--overlay-backdrop);
+  --drawer-pad: var(--spacing-l);
+  --drawer-header-pad-y: var(--spacing-s);
+  --drawer-header-pad-x: var(--spacing-m);
+  --drawer-header-gap: var(--spacing-s);
+  --drawer-header-border-bottom: var(--border-default);
+  --drawer-title-color: var(--text-title);
+  --drawer-body-pad: var(--spacing-m);
+  --drawer-body-color: var(--text-body);
+  /* Close = ghost icon button (X); full rounded */
+  --drawer-close-bg: transparent;
+  --drawer-close-bg-hover: var(--surface-hover);
+  --drawer-close-bg-active: var(--surface-pressed);
+  --drawer-close-icon: var(--icon-secondary);
+  --drawer-close-size: var(--icon-box-m);
 
   --popover-background: var(--surface-2);
   --popover-radius: var(--radius-control);
@@ -1482,11 +1499,14 @@
   --drawer-header-slot-gap: var(--spacing-2xs);
   --drawer-title-slot-color: var(--copy-slot-title);
   --drawer-body-slot-color: var(--copy-slot-body);
+  --drawer-overlay-slot-backdrop: var(--overlay-backdrop);
 
-  --drawer-close-slot-radius: var(--radius-slot-icon);
+  --drawer-close-slot-radius: 9999px;
+  --drawer-close-slot-bg: transparent;
   --drawer-close-slot-bg-hover: var(--surface-slot-hover);
   --drawer-close-slot-bg-active: var(--surface-slot-pressed);
   --drawer-close-slot-icon: var(--icon-slot-secondary);
+  --drawer-close-slot-size: var(--icon-box-m);
 
   /* ====================================================================== */
   /* COMPONENT: POPOVER / MENU                                               */

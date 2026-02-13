@@ -1,0 +1,31 @@
+{
+  "drawer": {
+    "description": "Panel deslizante desde un lado (por defecto derecha), con overlay debajo. Header: título (izquierda) + botón cerrar X ghost (derecha). Body con scroll.",
+    "structure": {
+      "overlay": "Capa entre página y panel; usa --drawer-overlay-backdrop; bloquea interacción",
+      "panel": "Contenedor del drawer (width, shadow, radius)",
+      "header": "Título (izq) + close ghost icon button X (der); siempre presente",
+      "body": "Contenido; padding y overflow auto"
+    },
+    "tokens": {
+      "overlay": "var(--drawer-overlay-backdrop)",
+      "background": "var(--drawer-background)",
+      "width": "var(--drawer-width)",
+      "radius": "var(--drawer-radius)",
+      "shadow": "var(--drawer-shadow)",
+      "headerPadY": "var(--drawer-header-pad-y)",
+      "headerPadX": "var(--drawer-header-pad-x)",
+      "headerGap": "var(--drawer-header-gap)",
+      "headerBorderBottom": "var(--drawer-header-border-bottom)",
+      "titleColor": "var(--drawer-title-color)",
+      "bodyPad": "var(--drawer-body-pad)",
+      "bodyColor": "var(--drawer-body-color)",
+      "closeBg": "var(--drawer-close-bg)",
+      "closeBgHover": "var(--drawer-close-bg-hover)",
+      "closeBgActive": "var(--drawer-close-bg-active)",
+      "closeIcon": "var(--drawer-close-icon)",
+      "closeSize": "var(--drawer-close-size)"
+    },
+    "closeButton": "Ghost icon button: transparent bg, full rounded (9999px), X icon (Lucide X). data-slot=\"drawer-close\"."
+  }
+}

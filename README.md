@@ -14,3 +14,4 @@ See:
 - [Tabla borderless](docs/table-borderless.md) — tokens y convenciones para tablas sin bordes (solo separadores, hover, sort, menú acciones). Spec JSON: [foundations/table-borderless.json](foundations/table-borderless.json).
 - [Logos y navbar](docs/logos-and-navbar.md) — logo por tema en `assets/logos/` (p. ej. `logo-demand.svg`); navbar con logo a la izquierda. Spec: [foundations/navbar.json](foundations/navbar.json).
 - [Copy y enlaces](docs/copy-and-links.md) — títulos, cabeceros y cuerpo siempre steel; color de tema solo para enlaces (evitar confundir cabeceros con links).
+- [Drawer](docs/drawer.md) — panel deslizante con overlay; header (título + X ghost) y body. Spec: [foundations/drawer.json](foundations/drawer.json).

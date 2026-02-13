@@ -391,6 +391,72 @@
   outline: none;
 }
 
+/* ========== Drawer (Modal + overlay; title + ghost close icon) ========== */
+.react-aria-ModalOverlay[data-slot="drawer"] {
+  background: var(--drawer-overlay-backdrop);
+  justify-content: flex-end;
+  align-items: stretch;
+  padding: 0;
+}
+.react-aria-ModalOverlay[data-slot="drawer"] .react-aria-Modal {
+  background: var(--drawer-background);
+  border-radius: var(--drawer-radius);
+  box-shadow: var(--drawer-shadow);
+  width: var(--drawer-width);
+  max-width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+}
+.react-aria-ModalOverlay[data-slot="drawer"] .react-aria-Modal .react-aria-Dialog {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+[data-slot="drawer-header"] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--drawer-header-gap);
+  padding: var(--drawer-header-pad-y) var(--drawer-header-pad-x);
+  border-bottom: 1px solid var(--drawer-header-border-bottom);
+}
+[data-slot="drawer-header"] [data-slot="drawer-title"] {
+  font-family: var(--type-font);
+  font-weight: var(--font-weight-600);
+  font-size: var(--font-size-l);
+  line-height: var(--font-leading-l);
+  color: var(--drawer-title-color);
+}
+[data-slot="drawer-close"] {
+  width: var(--drawer-close-size);
+  height: var(--drawer-close-size);
+  padding: 0;
+  border-radius: 9999px;
+  border: none;
+  background: var(--drawer-close-bg);
+  color: var(--drawer-close-icon);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.12s;
+}
+[data-slot="drawer-close"]:hover {
+  background: var(--drawer-close-bg-hover);
+}
+[data-slot="drawer-close"]:active {
+  background: var(--drawer-close-bg-active);
+}
+[data-slot="drawer-body"] {
+  padding: var(--drawer-body-pad);
+  color: var(--drawer-body-color);
+  overflow: auto;
+  flex: 1;
+}
+
 /* ========== Tabs ========== */
 .react-aria-Tabs {
   display: flex;

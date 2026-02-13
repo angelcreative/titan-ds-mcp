@@ -105,6 +105,10 @@ import { Plus } from 'lucide-react';
 </Button>
 ```
 
+### Drawer (Modal + overlay)
+
+Use `ModalOverlay` + `Modal` + `Dialog` with `data-slot="drawer"` on the overlay so it uses drawer tokens (overlay backdrop, panel from the right). The drawer always has a header (title + ghost close icon X) and a body. Use `data-slot="drawer-header"`, `data-slot="drawer-title"`, `data-slot="drawer-close"` (Button with Icon X, `slot="icon"`), and `data-slot="drawer-body"` for content. Tokens and spec: see [docs/drawer.md](../../docs/drawer.md) and `foundations/drawer.json` in titan-foundations.
+
 ### Other components
 
 All other exports (e.g. `Select`, `Dialog`, `Tabs`, `Checkbox`, `Switch`, `Menu`, `Tooltip`, `Popover`) are re-exported from `react-aria-components` and are styled by `titan-aria/styles` via Titan CSS variables. Use the [React Aria Components](https://react-spectrum.adobe.com/react-aria/components.html) docs for their APIs.
