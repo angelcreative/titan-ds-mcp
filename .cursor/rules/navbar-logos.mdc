@@ -14,7 +14,7 @@ Cuando se pida **navbar** (o "navbar demand", "navbar insights", etc.):
 
 ## Izquierda (solo esto, en este orden)
 
-1. **Icono grid** — Lucide: `LayoutGrid` (rejilla 9 puntos / app launcher). Siempre el primer elemento.
+1. **Icono grid** — Lucide: `Grip` (rejilla 9 puntos / app launcher). Siempre el primer elemento.
 2. **Logo** — `<img src="/assets/logos/{archivo}" />` donde {archivo} es el de **themeToLogo** para el tema:
    - "navbar demand" → `logo-demand.svg`
    - "navbar insights" → `logo-insights.svg`
@@ -40,6 +40,6 @@ No añadir ni quitar iconos; no poner búsqueda, menús extra ni ningún otro el
 
 ## Resumen
 
-- **100% width.** Izquierda: [LayoutGrid] [logo del tema]. Derecha: [Bell] [Handshake] [CircleHelp] [Settings] [Sparkles] [Avatar + ChevronDown]. **Nunca otro elemento.**
+- **100% width.** Izquierda: [Grip] [logo del tema]. Derecha: [Bell] [Handshake] [CircleHelp] [Settings] [Sparkles] [Avatar + ChevronDown]. **Nunca otro elemento.**
 
 Spec: `foundations/navbar.json`. Doc: `docs/logos-and-navbar.md`.
