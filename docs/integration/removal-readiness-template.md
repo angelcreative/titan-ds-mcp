@@ -7,7 +7,7 @@ Use this template to run a controlled dry-run before deleting local fallback art
 - Component(s):
 - Audit date:
 - Prepared by:
-- Target Titan React version:
+- Target Aria/titan-aria baseline:
 - Planned removal scope:
 
 ## Local artifacts proposed for removal
@@ -17,7 +17,7 @@ Use this template to run a controlled dry-run before deleting local fallback art
 
 ## Consumer evidence table
 
-| Consumer repo/app | Titan React version | Uses Titan React component in runtime | No dependency on local fallback artifacts | Theme parity | A11y parity | Product sign-off | Engineering sign-off |
+| Consumer repo/app | Aria/titan-aria version | Uses Aria/titan-aria component in runtime | No dependency on local fallback artifacts | Theme parity | A11y parity | Product sign-off | Engineering sign-off |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | `<repo-a>` | `<x.y.z>` | yes/no | yes/no | yes/no | yes/no | yes/no | yes/no |
 

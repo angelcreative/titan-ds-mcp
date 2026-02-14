@@ -1,19 +1,19 @@
 # Consumer Verification Checklist (Safe Removal Gate)
 
-Use this checklist before removing local fallback artifacts (`foundations/*.json`, docs, or rules) for components that are already official in Titan React.
+Use this checklist before removing local artifacts (`foundations/*.json`, docs, or rules) for components already stabilized in the hybrid Aria model.
 
 ## Scope
 
-Applies to: `Menu`, `Select`, `Navbar`, and any future component moving from local fallback to Titan React ownership.
+Applies to: `Menu`, `Select`, `Navbar`, and any future component moving from `SnowflakeFallback` to `AriaBase`/`TitanAriaWrapper`.
 
 ## Verification steps
 
 1. **Consumer inventory**
    - List all apps/repos using the component.
-   - Record current package version of `@audienseco/titan-react`.
+   - Record current versions for `react-aria-components` and `@audienseco/titan-aria` (if used).
 
 2. **Implementation source check**
-   - Confirm each consumer imports and renders the Titan React component (not local fallback implementation).
+   - Confirm each consumer uses React Aria + Titan tokens (directly or through `titan-aria` wrapper).
    - Confirm no consumer depends on local spec/rule generation for that component.
 
 3. **Visual parity check**
@@ -24,8 +24,8 @@ Applies to: `Menu`, `Select`, `Navbar`, and any future component moving from loc
    - Keyboard flow, focus visibility, labels/aria, disabled behavior.
 
 5. **Icon policy check**
-   - Titan React icon first.
-   - Lucide only for missing icons.
+   - Lucide usage is consistent.
+   - Icon color/size come from Titan tokens.
 
 6. **Operational sign-off**
    - Product/design sign-off for parity.
@@ -33,7 +33,7 @@ Applies to: `Menu`, `Select`, `Navbar`, and any future component moving from loc
 
 ## Evidence template
 
-| Consumer repo/app | Titan React version | Source is Titan React | Theme parity | A11y parity | Sign-off |
+| Consumer repo/app | Aria/titan-aria version | Source is Aria/titan-aria | Theme parity | A11y parity | Sign-off |
 | --- | --- | --- | --- | --- | --- |
 | `<repo-a>` | `<x.y.z>` | yes/no | yes/no | yes/no | yes/no |
 
@@ -41,7 +41,7 @@ Applies to: `Menu`, `Select`, `Navbar`, and any future component moving from loc
 
 Only remove local fallback artifacts when **all** active consumers are `yes` on:
 
-- source is Titan React
+- source is Aria/titan-aria
 - theme parity
 - a11y parity
 - sign-off

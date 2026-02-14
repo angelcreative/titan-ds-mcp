@@ -13,11 +13,11 @@ See:
 - [titan-aria](packages/titan-aria/README.md) for installation and usage.
 - [Integration docs](docs/integration/README.md) for ownership model and migration workflow.
 - [MCP usage](docs/integration/mcp-usage.md) for ready-to-use Cursor prompts and generation rules.
-- [Integration policy](docs/integration/decision-policy.md) for layer precedence (Titan React first, React Aria fallback, Lucide icon fallback).
+- [Integration policy](docs/integration/decision-policy.md) for layer precedence (React Aria base, Titan tokens/foundations, optional `titan-aria` wrappers, Lucide icons).
 - [Component inventory](docs/integration/component-inventory.md) for ownership and overlap status.
-- [Post-update audit runbook](docs/integration/post-update-audit-runbook.md) to migrate snowflakes after Titan React updates.
+- [Post-update audit runbook](docs/integration/post-update-audit-runbook.md) to keep snowflakes and wrapper debt under control.
 - [Tabla borderless](docs/table-borderless.md) — tokens y convenciones para tablas sin bordes (solo separadores, hover, sort, menú acciones). Spec JSON: [foundations/table-borderless.json](foundations/table-borderless.json).
-- [Logos y navbar](docs/logos-and-navbar.md) — fallback/reference spec para navbar cuando no se use la versión oficial de Titan React. Spec: [foundations/navbar.json](foundations/navbar.json).
+- [Logos y navbar](docs/logos-and-navbar.md) — especificación operativa de navbar por tema. Spec: [foundations/navbar.json](foundations/navbar.json).
 - [Copy y enlaces](docs/copy-and-links.md) — títulos, cabeceros y cuerpo siempre steel; color de tema solo para enlaces (evitar confundir cabeceros con links).
 - [Drawer](docs/drawer.md) — panel deslizante con overlay; header (título + X ghost) y body. Spec: [foundations/drawer.json](foundations/drawer.json).
 - [Menu y Select](docs/menu-and-select.md) — menús desplegables (y submenus) y Select; tokens completos; estructura React Aria. Specs: [foundations/menu.json](foundations/menu.json), [foundations/select.json](foundations/select.json).

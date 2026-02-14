@@ -1,6 +1,6 @@
 # Fallback Technical Contract
 
-This contract applies when a component is not available in Titan React and is implemented with React Aria + Titan tokens/foundations.
+This contract applies to temporary implementations (`snowflake`) built with React Aria + Titan tokens/foundations.
 
 ## 1) Build primitives
 
@@ -42,8 +42,7 @@ Every fallback component must define and verify:
 
 ## 6) Icon contract
 
-- Prefer icon assets/components from Titan React when available.
-- If missing, use `lucide-react`.
+- Use `lucide-react`.
 - Keep icon size/color tied to Titan tokens, not fixed values.
 
 ## 7) Snowflake metadata (mandatory)
@@ -51,6 +50,6 @@ Every fallback component must define and verify:
 Each fallback implementation must document:
 
 - `status: snowflake`
-- why Titan React equivalent is missing
-- migration trigger (Titan React component/version)
+- why temporary path is needed
+- migration trigger (target Aria/titan-aria normalized path)
 - owner and next audit date

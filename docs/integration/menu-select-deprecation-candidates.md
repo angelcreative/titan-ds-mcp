@@ -1,6 +1,6 @@
 # Menu/Select Deprecation Candidates
 
-This is the concrete file-by-file candidate list to execute deduplication now that `Menu` and `Select` are treated as official in Titan React for your team.
+This is the concrete file-by-file candidate list to execute normalization for `Menu` and `Select` in the hybrid Aria model.
 
 ## Execution status
 
@@ -19,8 +19,8 @@ Gate before items 6 and 7:
 
 ## Objective
 
-- Make Titan React the default source for `Menu` and `Select`.
-- Keep local specs as fallback/reference during transition.
+- Make `AriaBase` (`react-aria-components` + Titan tokens) the default source for `Menu` and `Select`.
+- Keep local specs as active operational references until usage is stable.
 - Avoid deleting useful token guidance too early.
 
 ## Immediate candidates (safe now)
@@ -29,8 +29,8 @@ Gate before items 6 and 7:
 
 - File: `.cursor/rules/menu-and-select.mdc`
 - Action:
-  - Add precedence note: Titan React first for Menu/Select when available.
-  - Keep current React Aria/token structure only as fallback contract.
+  - Keep precedence as React Aria + Titan tokens/foundations.
+  - Keep wrappers (`titan-aria`) as compatibility acceleration path.
 - Reason:
   - This is the highest-leverage guardrail to stop new duplicate implementations.
 
@@ -38,8 +38,8 @@ Gate before items 6 and 7:
 
 - File: `docs/menu-and-select.md`
 - Action:
-  - Add top ownership note: Titan React is default source.
-  - Keep tokens + structure as fallback/reference section.
+  - Keep top ownership note: hybrid Aria model is default source.
+  - Keep tokens + structure as operational contract section.
 - Reason:
   - Preserves design knowledge while clarifying source of truth.
 
@@ -47,7 +47,7 @@ Gate before items 6 and 7:
 
 - File: `foundations/README.md`
 - Action:
-  - Add explicit note that `menu.json` and `select.json` are fallback/reference when Titan React equivalents exist.
+  - Add explicit note that `menu.json` and `select.json` are operational references for Aria/token consistency.
 - Reason:
   - Prevents local specs being interpreted as the primary path.
 
@@ -59,8 +59,8 @@ Gate before items 6 and 7:
   - `foundations/menu.json`
   - `foundations/select.json`
 - Action:
-  - Add lifecycle metadata (for example: `status: "fallback-reference"`).
-  - Optionally add `owner: "Titan React"` and `migrationNote`.
+  - Add lifecycle metadata (for example: `status: "aria-primary"`).
+  - Optionally add `owner: "HybridAriaModel"` and `migrationNote`.
 - Reason:
   - Makes machine-readable ownership explicit.
 
@@ -69,8 +69,9 @@ Gate before items 6 and 7:
 - File: `docs/integration/component-inventory.md`
 - Action:
   - Track each of these as:
-    - `OfficialInTitanReact` (source)
-    - `fallback artifacts retained` (list of local files still present)
+    - `AriaBase` (source)
+    - `TitanAriaWrapper` (when wrapper is used)
+    - `artifacts retained` (list of local files still present)
 - Reason:
   - Improves audit traceability for future cleanup.
 
@@ -83,7 +84,7 @@ Gate before items 6 and 7:
   - `foundations/select.json`
 - Preconditions:
   - No active generator/rule/workflow depends on these files.
-  - Teams have migrated to Titan React usage paths.
+  - Teams have normalized to Aria/token usage paths.
   - Audit runbook sign-off completed.
 - Action:
   - Delete specs and remove references from docs/rules.

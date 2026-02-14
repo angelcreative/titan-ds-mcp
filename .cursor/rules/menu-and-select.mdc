@@ -8,8 +8,9 @@ alwaysApply: false
 
 ## Precedencia obligatoria
 
-- Si `Menu` o `Select` existen en la versión instalada de `@audienseco/titan-react`, usar Titan React como fuente principal.
-- Usar esta regla (React Aria + tokens) solo como fallback/reference cuando falte capacidad en Titan React para el caso concreto.
+- Base obligatoria: `react-aria-components` para anatomía y accesibilidad.
+- Pintado obligatorio: tokens semánticos Titan y foundations.
+- Compatibilidad: usar wrappers de `titan-aria` cuando ya existan y eviten retrabajo.
 
 ## Menu (y submenus)
 

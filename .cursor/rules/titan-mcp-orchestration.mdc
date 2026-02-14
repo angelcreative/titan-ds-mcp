@@ -1,5 +1,4 @@
----
-description: Titan MCP orchestration — Titan React first, React Aria fallback, Lucide icon fallback
+description: Titan MCP orchestration — React Aria base, Titan tokens/foundations, titan-aria wrappers
 alwaysApply: true
 ---
 
@@ -7,24 +6,26 @@ alwaysApply: true
 
 When generating UI through Cursor + MCP for this repository, follow this order:
 
-1. Use `@audienseco/titan-react` component first when available in product version.
-2. If missing, use React Aria primitives + Titan tokens/foundations as fallback.
-3. For icons: use Titan React icons first; if missing, use `lucide-react`.
+1. Use `react-aria-components` primitives as behavioral/accessibility base.
+2. Paint with Titan semantic tokens/foundations.
+3. Reuse `titan-aria` wrappers when they avoid rework and keep parity.
+4. For icons, use `lucide-react`.
 
-## Components treated as official in Titan React (current team context)
+## Component ownership model (current context)
 
-- Stable: `AudienseEcosystemMenu`, `Button Group`, `Buttons`, `Checkbox`, `Dialog`, `Label`, `NavBar`, `Pagination`, `Pill`, `Radio Buttons`, `Tabs`, `Tooltip`.
-- Also treated as official (used in production): `ActionableIcon`, `Avatar`, `Badge`, `Charts`, `Divider`, `Flag`, `GridList`, `Icons`, `Link`, `Loading`, `MatchHighlighter`, `Menu`, `PlatformIcon`, `Popover`, `RefreshSpinner`, `Select`, `Table`, `Toast`, `Toggle`, `Accordion`, `Collapsible`, `Combobox`, `Input`, `TagGroup`, `TextArea`, `TextField`.
+- `AriaBase`: component built from `react-aria-components` + Titan tokens/foundations.
+- `TitanAriaWrapper`: existing wrapper from `packages/titan-aria` used as compatibility accelerator.
+- `FoundationSpec`: JSON/doc spec only; not a productized component runtime.
 
-## Local fallback ownership notes
+## Implementation notes
 
-- `Navbar`, `Menu`, and `Select` local specs/rules are fallback/reference only.
-- `Drawer` remains fallback with React Aria + Titan tokens unless official Titan React support is confirmed in current version.
+- `Navbar`, `Menu`, `Select`, and `Drawer` must resolve as `AriaBase` or `TitanAriaWrapper`.
+- Local specs/docs are active references for generation consistency, not deprecated placeholders.
 
 ## Non-collision rule
 
-- Never output two "official" implementations for the same component in one solution.
-- If using fallback, mark it as temporary (`snowflake`) and align with integration docs.
+- Never output two active implementations for the same component in one solution.
+- If using a temporary path, mark it as `snowflake` and include migration trigger.
 
 ## References
 

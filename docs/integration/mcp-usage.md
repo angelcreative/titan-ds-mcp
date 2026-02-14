@@ -4,10 +4,10 @@ This is the practical usage contract so you can request interfaces and get consi
 
 ## What MCP should do by default
 
-1. Resolve whether requested component exists in `@audienseco/titan-react`.
-2. If yes, use Titan React implementation.
-3. If no, build fallback with React Aria + Titan tokens/foundations.
-4. For icons, use Titan React icon first; if missing, use `lucide-react`.
+1. Build requested components from `react-aria-components`.
+2. Apply Titan semantic tokens/foundations for visuals.
+3. Reuse `titan-aria` wrappers when they fit and avoid rework.
+4. Use `lucide-react` for icons with Titan token-driven size/color.
 
 ## Ready-to-use prompts
 
@@ -15,18 +15,19 @@ This is the practical usage contract so you can request interfaces and get consi
 
 ```text
 Create this UI with Titan rules:
-- Use @audienseco/titan-react first for any available component.
-- If missing, fallback to React Aria + Titan tokens/foundations from this repo.
-- For icons, use Titan React icons first; if missing, use lucide-react.
-- Do not create two official implementations of the same component.
+- Use react-aria-components as base behavior/accessibility layer.
+- Paint with Titan tokens/foundations from this repo.
+- Reuse titan-aria wrappers if already available and appropriate.
+- Use lucide-react for icons with token-based size/color.
+- Do not create two active implementations of the same component.
 ```
 
 ### Navbar request
 
 ```text
 Build page shell with navbar:
-- Prefer Titan React NavBar.
-- Only if NavBar is unavailable in current version, use local fallback spec (foundations/navbar.json + docs/logos-and-navbar.md).
+- Implement navbar with React Aria/titan-aria + tokens.
+- Use foundations/navbar.json + docs/logos-and-navbar.md as the required structural contract.
 - Keep exact icon policy and theme logo mapping.
 ```
 
@@ -34,8 +35,8 @@ Build page shell with navbar:
 
 ```text
 Build filters area with Menu and Select:
-- Prefer Titan React Menu and Select.
-- Use local foundations/menu.json and foundations/select.json only as fallback/reference.
+- Use React Aria/titan-aria structure for Menu and Select.
+- Use foundations/menu.json and foundations/select.json as operational token/structure contract.
 - Keep tokens/theme behavior aligned with titan.css + active theme.
 ```
 
@@ -43,7 +44,7 @@ Build filters area with Menu and Select:
 
 ```text
 Create a new exploratory component pattern:
-- If component does not exist in Titan React, build with React Aria + Titan semantic tokens.
+- Build with React Aria + Titan semantic tokens.
 - Mark output as snowflake fallback (temporary).
 - Keep empty/loading/error/success states and accessibility parity.
 ```

@@ -4,30 +4,29 @@ This policy defines which layer to use to implement UI, without collisions.
 
 ## Priority order (mandatory)
 
-1. **Titan React first**  
-   If the component exists in your installed `@audienseco/titan-react` version, use it.
+1. **React Aria base**  
+   Build behavior and accessibility with `react-aria-components`.
 
-2. **React Aria + Titan tokens/foundations fallback**  
-   If the component does not exist in Titan React, build with React Aria primitives and Titan tokens.
+2. **Titan visual contract**  
+   Apply Titan semantic tokens/foundations for spacing, typography, color, radius, and elevation.
 
-3. **Icons fallback rule**  
-   Prefer Titan React icons. If a specific icon is missing, use `lucide-react`.
+3. **Compatibility wrappers (`titan-aria`)**  
+   Reuse wrappers when they reduce rework and preserve parity with the same token contract.
 
-## Production adoption override
-
-If a Titan React component is tagged as `snowflake` in catalog metadata but is already approved and used in production by your team, treat it as official for implementation decisions in this repository.
+4. **Icon rule**  
+   Use `lucide-react` and bind size/color to Titan tokens.
 
 ## Single source of truth rule
 
-- Never maintain two active implementations of the same component as official.
-- When a component becomes official in Titan React, local fallback becomes deprecated.
+- Never maintain two active implementations of the same component in one solution.
+- Prefer one path per component (`AriaBase` or `TitanAriaWrapper`) and document exceptions.
 
 ## Snowflake rule
 
-Fallback implementations must be marked as `snowflake` (temporary) and include:
+Temporary implementations must be marked as `snowflake` and include:
 
-- Reason why fallback exists.
-- Exit criteria (what Titan React component/version replaces it).
+- Reason why temporary path exists.
+- Exit criteria (what implementation or wrapper state closes it).
 - Owner and review date.
 
 ## Styling and theme invariants
@@ -42,6 +41,6 @@ Regardless of layer:
 
 | Scenario | Use |
 | --- | --- |
-| Component available in Titan React | Titan React |
-| Component missing in Titan React | React Aria + Titan tokens/foundations |
-| Required icon missing in Titan React | Lucide icon fallback |
+| Standard component flow | `react-aria-components` + Titan tokens/foundations |
+| Existing wrapper already fits | `titan-aria` wrapper + Titan tokens/foundations |
+| Missing icon | `lucide-react` + Titan token-driven color/size |

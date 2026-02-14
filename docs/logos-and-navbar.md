@@ -1,7 +1,7 @@
 # Logos y navbar por tema
 
-> Ownership policy: si la versión instalada de `@audienseco/titan-react` ya incluye Navbar oficial, usar Titan React como fuente de verdad.  
-> Este documento y `foundations/navbar.json` quedan como fallback/reference para exploración o escenarios donde no exista esa versión oficial.
+> Ownership policy: navbar se implementa con base React Aria/titan-aria y tokens/foundations Titan.  
+> Este documento y `foundations/navbar.json` son referencia operativa activa para mantener consistencia visual y de interacción.
 
 Los logos de producto viven en **`assets/logos/`**. Cada archivo es un SVG con nombre `logo-{tema}.svg`. No se usa texto junto al logo; solo la imagen según el tema activo.
 

@@ -4,11 +4,11 @@ Use this checklist in PRs that touch components, layout patterns, or design-syst
 
 ## PR checklist
 
-- [ ] I checked whether the component already exists in Titan React.
-- [ ] If it exists in Titan React, I used Titan React (no local duplicate implementation).
-- [ ] If it does not exist, I implemented fallback with React Aria + Titan tokens/foundations.
+- [ ] I used React Aria + Titan tokens/foundations as the primary implementation path.
+- [ ] If a `titan-aria` wrapper exists, I evaluated using it to avoid rework while keeping parity.
+- [ ] I avoided duplicate active implementations for the same component.
 - [ ] Fallback is tagged/documented as `snowflake` with migration trigger.
-- [ ] Icons follow policy: Titan React first, Lucide only when missing.
+- [ ] Icons follow policy: `lucide-react` + Titan token-driven size/color.
 - [ ] No hardcoded brand colors; semantic tokens only.
 - [ ] Theme contract is respected (`data-theme`, load order, multi-theme behavior).
 - [ ] Accessibility behavior verified (keyboard, focus, labels/aria).
@@ -25,11 +25,11 @@ Track these monthly:
 2. **Snowflake age**
    - Average and max age (days) of active snowflakes.
 3. **Migration velocity**
-   - Number of snowflakes migrated to Titan React per release cycle.
+   - Number of snowflakes normalized to `AriaBase`/`TitanAriaWrapper` per cycle.
 4. **Duplicate ownership incidents**
    - PRs/reworks caused by two simultaneous sources of truth.
 5. **Icon fallback ratio**
-   - Lucide fallback usage vs Titan React icon usage.
+   - Icon usages that are token-bound vs icon usages with hardcoded styling.
 
 ## Quality gates
 

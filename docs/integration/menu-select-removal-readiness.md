@@ -7,7 +7,7 @@ This dry-run is the execution sheet for items 6 and 7 in `menu-select-deprecatio
 - Component(s): `Menu`, `Select`
 - Audit date: TBD
 - Prepared by: TBD
-- Target Titan React version: TBD
+- Target Aria/titan-aria baseline: TBD
 - Planned removal scope:
   - `foundations/menu.json`
   - `foundations/select.json`
@@ -16,7 +16,7 @@ This dry-run is the execution sheet for items 6 and 7 in `menu-select-deprecatio
 
 ## Consumer evidence table
 
-| Consumer repo/app | Titan React version | Uses Titan React Menu/Select in runtime | No dependency on local fallback artifacts | Theme parity | A11y parity | Product sign-off | Engineering sign-off |
+| Consumer repo/app | Aria/titan-aria version | Uses Aria/titan-aria Menu/Select in runtime | No dependency on local fallback artifacts | Theme parity | A11y parity | Product sign-off | Engineering sign-off |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | `<repo-a>` | `<x.y.z>` | yes/no | yes/no | yes/no | yes/no | yes/no | yes/no |
 | `<repo-b>` | `<x.y.z>` | yes/no | yes/no | yes/no | yes/no | yes/no | yes/no |

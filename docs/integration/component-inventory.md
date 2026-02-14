@@ -1,77 +1,28 @@
-# Component Inventory (Titan React vs Fallback)
+# Component Inventory (Hybrid Aria Model)
 
-This inventory is the decision baseline to avoid two sources of truth.
+This inventory is the decision baseline to avoid two active sources of truth.
 
 ## Status model
 
-- `OfficialInTitanReact`: use `@audienseco/titan-react` as the only implementation source.
-- `SnowflakeFallback`: temporary implementation using React Aria + Titan tokens/foundations.
-- `FoundationOnlySpec`: spec/guideline only, not a productized component.
-
-## Titan React catalog (provided by team)
-
-The following components are treated as `OfficialInTitanReact` in your operating model.
-
-### Stable
-
-- `AudienseEcosystemMenu`
-- `Button Group`
-- `Buttons`
-- `Checkbox`
-- `Dialog`
-- `Label`
-- `NavBar`
-- `Pagination`
-- `Pill`
-- `Radio Buttons`
-- `Tabs`
-- `Tooltip`
-
-### In production (treat as stable in practice)
-
-The following are tagged as snowflake in some sources, but your team uses them in production, so this inventory treats them as effectively stable/official for implementation decisions:
-
-- `ActionableIcon`
-- `Avatar`
-- `Badge`
-- `Charts`
-- `Divider`
-- `Flag`
-- `GridList`
-- `Icons`
-- `Link`
-- `Loading`
-- `MatchHighlighter`
-- `Menu`
-- `PlatformIcon`
-- `Popover`
-- `RefreshSpinner`
-- `Select`
-- `Table`
-- `Toast`
-- `Toggle`
-- `Accordion`
-- `Collapsible`
-- `Combobox`
-- `Input`
-- `TagGroup`
-- `TextArea`
-- `TextField`
+- `AriaBase`: built with `react-aria-components` + Titan tokens/foundations.
+- `TitanAriaWrapper`: built using wrapper(s) from `packages/titan-aria` over the same Aria/token contract.
+- `SnowflakeFallback`: temporary implementation that still needs normalization.
+- `FoundationOnlySpec`: spec/guideline only, not a productized runtime component.
 
 ## Repo-focused inventory
 
 | Item | Current source in this repo | Target status | Decision now |
 | --- | --- | --- | --- |
-| Navbar | `foundations/navbar.json`, `docs/logos-and-navbar.md`, `.cursor/rules/navbar-logos.mdc` | `OfficialInTitanReact` | Prefer Titan React navbar; keep local assets/spec as fallback/reference only. |
-| Drawer | `foundations/drawer.json`, `docs/drawer.md`, `titan-aria` React Aria structure | `SnowflakeFallback` | Use React Aria + Titan tokens until Titan React provides an official drawer in your version. |
-| Menu | `foundations/menu.json`, `docs/menu-and-select.md`, `.cursor/rules/menu-and-select.mdc` | `OfficialInTitanReact` | Prefer Titan React `Menu`; keep local spec/rule as fallback/reference during migration. |
-| Select | `foundations/select.json`, `docs/menu-and-select.md`, `.cursor/rules/menu-and-select.mdc` | `OfficialInTitanReact` | Prefer Titan React `Select`; keep local spec/rule as fallback/reference during migration. |
+| Navbar | `foundations/navbar.json`, `docs/logos-and-navbar.md`, `.cursor/rules/navbar-logos.mdc` | `AriaBase` | Keep as active operational pattern with strict structure and theme logo mapping. |
+| Drawer | `foundations/drawer.json`, `docs/drawer.md`, React Aria structure in `titan-aria` usage paths | `AriaBase` | Build with React Aria + Titan tokens; keep overlay behavior and state coverage. |
+| Menu | `foundations/menu.json`, `docs/menu-and-select.md`, `.cursor/rules/menu-and-select.mdc` | `AriaBase` | Keep React Aria structure and Titan token contract as primary. |
+| Select | `foundations/select.json`, `docs/menu-and-select.md`, `.cursor/rules/menu-and-select.mdc` | `AriaBase` | Keep React Aria structure and Titan token contract as primary. |
 | Grid/layout system | `foundations/grid.json`, `docs/grid.md`, `foundations/template.json` | `FoundationOnlySpec` | Keep as cross-cutting layout foundation. |
-| Table borderless pattern | `foundations/table-borderless.json`, `docs/table-borderless.md` | `FoundationOnlySpec` | Titan React table is available; keep this as optional borderless variant spec unless absorbed by Titan React. |
+| Table borderless pattern | `foundations/table-borderless.json`, `docs/table-borderless.md` | `FoundationOnlySpec` | Keep as optional borderless data-table pattern. |
 | Copy and links conventions | `foundations/copy-and-links.json`, `docs/copy-and-links.md` | `FoundationOnlySpec` | Keep as semantic writing/styling convention. |
-| Icon fallback | `lucide-react` via `titan-aria` | `SnowflakeFallback` | Prefer Titan React icons; if a specific icon is missing, use Lucide. |
+| Icons | `lucide-react` + Titan tokens | `AriaBase` | Use Lucide with token-driven color/size consistently. |
 
-## Supporting inventory (titan-aria package)
+## Supporting inventory (`titan-aria` package)
 
 Current direct wrappers in `packages/titan-aria/src`:
 
@@ -81,9 +32,9 @@ Current direct wrappers in `packages/titan-aria/src`:
 
 All other primitives are re-exported from `react-aria-components` through `packages/titan-aria/src/index.ts`.
 
-## Active fallback artifacts to track
+## Active artifacts to track
 
-For components already treated as official in Titan React, these local files are still intentionally retained as transition fallback/reference and must be reviewed in audits:
+Track these operational files in each audit cycle to ensure they stay aligned:
 
 - Navbar: `foundations/navbar.json`, `docs/logos-and-navbar.md`, `.cursor/rules/navbar-logos.mdc`
 - Menu: `foundations/menu.json`, `docs/menu-and-select.md`, `.cursor/rules/menu-and-select.mdc`
@@ -91,8 +42,8 @@ For components already treated as official in Titan React, these local files are
 
 ## Audit cadence
 
-Run this inventory update after each relevant Titan React update:
+Run this inventory update after each integration cycle:
 
-1. Check what became official in Titan React.
-2. Move matching `SnowflakeFallback` rows to `OfficialInTitanReact`.
-3. Add migration note and deprecation target for the local fallback.
+1. Review `AriaBase` vs `TitanAriaWrapper` usage by component.
+2. Reduce `SnowflakeFallback` entries with explicit normalization tasks.
+3. Record migration notes and next review date.
