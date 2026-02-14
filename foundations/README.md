@@ -2,6 +2,9 @@
 
 Specs en JSON y convenciones para que implementaciones (o Cursor/MCP) puedan replicar patrones de UI usando solo tokens de Titan, sin componentes predefinidos.
 
+> Alcance de esta carpeta: **specs de componentes/layout**.  
+> Para primitives (spacing, typography, borders, elevation, colors), usar `tokens/foundations/`.
+
 ## Contenido
 
 - **`table-borderless.json`** — Especificación de la tabla borderless: tokens de contenedor, celdas, separadores, hover, iconos de ordenación (Lucide) y menú de acciones (Editar / Clonar / Borrar). Ver [docs/table-borderless.md](../docs/table-borderless.md) para la documentación completa (tokens + reglas CSS + convención de iconos).
@@ -30,3 +33,10 @@ Para ownership de componentes y precedencia entre capas, usar:
 - [docs/integration/component-inventory.md](../docs/integration/component-inventory.md)
 
 Nota de ownership: el camino por defecto es React Aria + tokens/foundations (directo o con wrappers `titan-aria`); las specs en `foundations/` definen el contrato visual/estructural.
+
+## Separacion con tokens/foundations
+
+- `foundations/` (esta carpeta): contratos de estructura/composicion para componentes y layouts.
+- `tokens/foundations/`: primitives fuente de `titan.css`.
+
+No mezclar ambos tipos en la misma ruta para evitar resoluciones ambiguas en MCP y reglas de generacion.
